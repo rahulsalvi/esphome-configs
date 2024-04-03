@@ -82,8 +82,8 @@ switch:
     restore_mode: ALWAYS_OFF
 
 time:
-  - platform: sntp
-    id: my_time
+  - platform: homeassistant
+    id: homeassistant_time
 
 status_led:
   pin:
