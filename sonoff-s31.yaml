@@ -89,3 +89,7 @@ status_led:
   pin:
     number: GPIO13
     inverted: True
+
+text_sensor:
+  - platform: version
+    name: $hostname ESPHome Version
