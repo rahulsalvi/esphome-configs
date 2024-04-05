@@ -61,6 +61,7 @@ sensor:
         - throttle: ${update_interval}
   - platform: integration
     name: $hostname Energy
+    icon: mdi:battery
     sensor: my_power
     time_unit: h
     id: energy_used
@@ -70,7 +71,7 @@ sensor:
 button:
   - platform: template
     name: $hostname Reset Energy
-    icon: mdi:lightning-bolt
+    icon: mdi:restart
     on_press:
       - sensor.integration.reset: energy_used
 
