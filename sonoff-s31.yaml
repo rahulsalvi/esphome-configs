@@ -1,10 +1,12 @@
 ---
 substitutions:
   hostname: "sonoff-s31"
+  friendly_name: "Sonoff S31"
   update_interval: 10s
 
 esphome:
   name: $hostname
+  friendly_name: $friendly_name
 
 esp8266:
   board: esp01_1m
@@ -33,35 +35,35 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: True
-    name: $hostname Button
+    name: Button
     on_press:
       - switch.toggle: relay
   - platform: status
-    name: $hostname Status
+    name: Status
 
 sensor:
   - platform: wifi_signal
-    name: $hostname WiFi Signal
+    name: WiFi Signal
     update_interval: ${update_interval}
   - platform: cse7766
     current:
-      name: $hostname Current
+      name: Current
       accuracy_decimals: 1
       filters:
         - throttle_average: ${update_interval}
     voltage:
-      name: $hostname Voltage
+      name: Voltage
       accuracy_decimals: 1
       filters:
         - throttle: ${update_interval}
     power:
-      name: $hostname Power
+      name: Power
       accuracy_decimals: 1
       id: my_power
       filters:
         - throttle: ${update_interval}
   - platform: integration
-    name: $hostname Energy
+    name: Energy
     icon: mdi:battery
     sensor: my_power
     time_unit: h
@@ -71,14 +73,14 @@ sensor:
 
 button:
   - platform: template
-    name: $hostname Reset Energy
+    name: Reset Energy
     icon: mdi:restart
     on_press:
       - sensor.integration.reset: energy_used
 
 switch:
   - platform: gpio
-    name: $hostname Relay
+    name: Relay
     pin: GPIO12
     id: relay
     restore_mode: ALWAYS_OFF
@@ -94,4 +96,4 @@ status_led:
 
 text_sensor:
   - platform: version
-    name: $hostname ESPHome Version
+    name: ESPHome Version
