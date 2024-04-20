@@ -1,3 +1,4 @@
+---
 substitutions:
   hostname: "sonoff-s31"
   update_interval: 10s
