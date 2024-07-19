@@ -23,7 +23,8 @@ api:
     key: !secret api_key
 
 ota:
-  password: !secret ota_pass
+  - platform: esphome
+    password: !secret ota_pass
 
 uart:
   rx_pin: RX
