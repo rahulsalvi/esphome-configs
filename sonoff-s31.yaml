@@ -77,7 +77,6 @@ sensor:
 button:
   - platform: restart
     name: Restart
-    entity_category: diagnostic
   - platform: template
     name: Reset Energy
     icon: mdi:restart
