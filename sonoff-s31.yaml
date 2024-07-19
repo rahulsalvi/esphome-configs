@@ -71,8 +71,13 @@ sensor:
     id: energy_used
     filters:
       - throttle: ${update_interval}
+  - platform: uptime
+    name: Uptime
 
 button:
+  - platform: restart
+    name: Restart
+    entity_category: diagnostic
   - platform: template
     name: Reset Energy
     icon: mdi:restart

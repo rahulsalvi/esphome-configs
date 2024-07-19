@@ -38,8 +38,16 @@ api:
     key: !secret api_key
 
 ota:
-  password: !secret ota_pass
+  - platform: esphome
+    password: !secret ota_pass
 
 time:
   - platform: homeassistant
     id: homeassistant_time
+
+sensor:
+  - platform: wifi_signal
+    name: WiFi Signal
+    update_interval: 60s
+  - platform: uptime
+    name: Uptime
