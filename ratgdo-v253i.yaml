@@ -45,6 +45,10 @@ time:
   - platform: homeassistant
     id: homeassistant_time
 
+button:
+  - platform: restart
+    name: Restart
+
 sensor:
   - platform: wifi_signal
     name: WiFi Signal
