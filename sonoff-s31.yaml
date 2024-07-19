@@ -98,7 +98,7 @@ time:
 status_led:
   pin:
     number: GPIO13
-    inverted: True
+    inverted: true
 
 text_sensor:
   - platform: version
